@@ -12,9 +12,6 @@
 #include "Onegin.h"
 #include "unit.h"
 
-int compare(const void *first, const void* second){
-  return strcmp(*(char**)first, *(char**)second);
-}
 
 int main(){
 //считывание файла
