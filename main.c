@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Onegin.h"
+#include "unit.h"
 
 int compare(const void *first, const void* second){
   return strcmp(*(char**)first, *(char**)second);
@@ -33,10 +34,10 @@ build_strings_formatted_buf(text, strings, count_lines);
 qsort(strings, count_lines, sizeof(char**), compare);
 
 //вывод отсортированного буфера
-for(size_t i = 0; i<count_lines; ++i){
-  printf("%s\n", strings[i]);
-}
-
+//for(size_t i = 0; i<count_lines; ++i){
+//  printf("%s\n", strings[i]);
+//}
+run_all_test();
 
 return 0;
 }
