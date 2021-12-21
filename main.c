@@ -17,8 +17,9 @@ int compare(const void *first, const void* second){
 }
 
 int main(){
-FILE *input = fopen("Onegin.txt", "rb");
 //считывание файла
+FILE *input = fopen("Onegin.txt", "rb");
+
 size_t fsize = count_fsize(input);
 //создание буфера
 char* text = (char*)calloc(fsize, sizeof(char));
