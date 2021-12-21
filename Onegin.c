@@ -1,5 +1,24 @@
 #include "Onegin.h"
 
+/**
+ * \ для сортировки строк
+ * \
+ * \param first первая строка
+ * \param second вторая строка
+ * \return возвращает наибольшую (по указателям)
+*/
+
+int compare(const void *first, const void* second){
+  return strcmp(*(char**)first, *(char**)second);
+}
+
+
+/**
+ * \ размер файла узнаем
+ * \
+ * \param FILE собственно сам файл
+ * \return возвращает размер
+*/
 
 size_t count_fsize(FILE *f){
   size_t start = ftell(f);
@@ -8,6 +27,11 @@ size_t count_fsize(FILE *f){
   fseek(f, start, SEEK_SET);
   return size;
 }
+
+
+/**
+ * \ создание буфера строк
+*/
 
 size_t format_buffer(char *buf)
 {
@@ -19,9 +43,8 @@ size_t format_buffer(char *buf)
     }
     buf++;
   }
-  //ща будет замена всех подряд идущих \0 на один \0
+  //замена всех подряд идущих \0 на один \0
   //чтоб не выводить пустые строки
-
   while (from != buf){
     int flag = 0;
     while ((*from == '\0') && (from != buf)){
@@ -38,6 +61,10 @@ size_t format_buffer(char *buf)
   }
   return count_lines;
 }
+
+/**
+ * \ форматирование буфера строк
+*/
 
 void build_strings_formatted_buf(char *buf, char **strings, size_t count_lines){
   char *start = buf;
