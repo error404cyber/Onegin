@@ -38,6 +38,6 @@ char* text = (char*)calloc(fsize, sizeof(char));
   run_all_test();
   free (strings);
   free(text);
-  FILE *input = fclose(input);
+  fclose(input);
   return 0;
 }
