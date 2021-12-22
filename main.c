@@ -37,6 +37,7 @@ char* text = (char*)calloc(fsize, sizeof(char));
 //}
   run_all_test();
   free (strings);
-  FILE *input = fclose(file);
+  free(text);
+  FILE *input = fclose(input);
   return 0;
 }
