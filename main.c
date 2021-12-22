@@ -20,22 +20,22 @@ FILE *input = fopen("Onegin.txt", "rb");
 size_t fsize = count_fsize(input);
 //создание буфера
 char* text = (char*)calloc(fsize, sizeof(char));
-fread(text, sizeof(char), fsize, input);
+  fread(text, sizeof(char), fsize, input);
 
-size_t count_lines = format_buffer(text);
+  size_t count_lines = format_buffer(text);
 
 
-char ** strings = (char**)calloc(count_lines, sizeof(char*));
-build_strings_formatted_buf(text, strings, count_lines);
+  char ** strings = (char**)calloc(count_lines, sizeof(char*));
+  build_strings_formatted_buf(text, strings, count_lines);
 
 //сортировка массива строк
-qsort(strings, count_lines, sizeof(char**), compare);
+  qsort(strings, count_lines, sizeof(char**), compare);
 
 //вывод отсортированного буфера
 //for(size_t i = 0; i<count_lines; ++i){
 //  printf("%s\n", strings[i]);
 //}
-run_all_test();
+  run_all_test();
 
-return 0;
+  return 0;
 }
