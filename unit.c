@@ -31,6 +31,7 @@ Error test_fsize(){
         printf("Not right\n");
         return NOT_OK;
     }
+    FILE *input = fclose(input);
     return OK;
 }
 
@@ -44,6 +45,8 @@ Error test_format_buffer(){
         printf("Not right\n");
         return NOT_OK;
     }
+    free(text);
+    FILE *input = fclose(input);
     return OK;
 }
 
@@ -58,5 +61,7 @@ Error test_build_strings_formatted_buf(){
         printf("Not right\n");
         return NOT_OK;
     }
+    free(text);
+    FILE *input = fclose(input);
     return OK;
 }
